@@ -1,0 +1,22 @@
+name: name
+description: description
+version: '0.0.1-dev'
+author: Plague Fox <Plugfox@gmail.com>
+homepage: https://github.com/plugfox
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: '>=2.8.0 <3.0.0'
+
+dependencies:
+  meta: '>=1.0.0 <2.0.0'
+
+dev_dependencies:
+  build_runner: '>=1.8.1 <2.0.0'
+  build_test: '>=1.0.0 <2.0.0'
+  test: '>=1.14.2 <2.0.0'
+  grinder: '>=0.8.4 <1.0.0'
+  path: '>=1.7.0 <2.0.0'
+
+dependency_overrides:
