@@ -2,6 +2,7 @@ import 'dart:io' as io;
 
 import '_service.dart';
 
+/// sudo apt -y install sqlite3 libsqlite3-dev
 Future<void> setup() {
   if (io.Platform.isLinux) {
     final String os = io.Platform.operatingSystem.toLowerCase();

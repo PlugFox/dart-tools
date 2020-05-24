@@ -2,6 +2,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io' as io;
+import 'dart:collection';
 
 import 'package:async/async.dart' show StreamGroup;
 import 'package:grinder/grinder.dart';
@@ -17,8 +18,8 @@ void main(List<String> args) => grind(args);
 @DefaultTask('Build release app for all platform')
 @Task('Build release app for all platform')
 @Depends(get, generateCode, bump, test)
-void build() {
-  Future.wait(<Future<void>>[
+Future<void> build() {
+  return Future.wait(<Future<void>>[
     buildWeb(),
     buildAndroid(),
   ]).whenComplete(deployWeb);

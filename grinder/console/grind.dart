@@ -9,13 +9,14 @@ import 'grind/pub.dart' as pub;
 import 'grind/sqlite.dart' as sql;
 import 'grind/tests.dart' as tests;
 import 'grind/tuneup.dart' as tuneup;
+import 'grind/version.dart' as ver;
 
 void main(List<String> args) => grind(args);
 
 // Pub
 
 @DefaultTask('Build release app')
-@Depends(get, generate, test)
+@Depends(get, generate, ver.generate, test)
 Future<void> build() => dart2native.build();
 
 @Task('pub get')
